@@ -1493,3 +1493,90 @@ a {
         width: 100%;
     }
 }
+
+/* =========================================
+   Team & Volunteers Section
+========================================= */
+.team-section {
+    position: relative;
+    z-index: 2;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.team-card:hover::before {
+    transform: scaleX(1);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 4px solid var(--bg-white);
+}
+
+/* Avatar Colors */
+.avatar-gs { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.avatar-sj { background: linear-gradient(135deg, #10b981, #059669); }
+.avatar-kg { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.avatar-ir { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+.avatar-sh { background: linear-gradient(135deg, #ec4899, #db2777); }
+.avatar-fk { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.team-role {
+    color: var(--secondary-orange);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
